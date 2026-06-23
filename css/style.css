@@ -4,7 +4,7 @@
 :root {
   --ink:      #111111;
   --ink-2:    #555550;
-  --ink-3:    #999994;
+  --ink-3:    #686864;
   --paper:    #F7F6F4;
   --paper-2:  #EEECEA;
   --accent:   #CC1414;
@@ -189,7 +189,7 @@ img { display: block; max-width: 100%; }
 .hero__phone-num:hover { color: #fff; text-decoration: none; }
 .hero__phone-meta {
   font-size: .78rem;
-  color: rgba(255,255,255,.35);
+  color: rgba(255,255,255,.65);
   letter-spacing: .02em;
 }
 .hero__cta {
@@ -232,7 +232,7 @@ img { display: block; max-width: 100%; }
    ============================================ */
 .eyebrow {
   display: block;
-  font-size: .7rem;
+  font-size: .78rem;
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -329,7 +329,7 @@ img { display: block; max-width: 100%; }
   grid-template-columns: 1fr;
 }
 .why__point:first-child { border-top: 1px solid var(--border); }
-.why__point h4 {
+.why__point h3 {
   font-size: .9rem;
   font-weight: 700;
   color: var(--ink);
@@ -385,7 +385,7 @@ img { display: block; max-width: 100%; }
   line-height: 1;
 }
 .stat__lbl {
-  font-size: .8rem;
+  font-size: .82rem;
   color: var(--ink-2);
   line-height: 1.4;
 }
@@ -404,7 +404,7 @@ img { display: block; max-width: 100%; }
 .info-block { padding-bottom: 1.75rem; border-bottom: 1px solid var(--border); }
 .info-block:last-child { border: none; padding: 0; }
 .info-block__lbl {
-  font-size: .68rem;
+  font-size: .78rem;
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
@@ -444,7 +444,7 @@ img { display: block; max-width: 100%; }
 .form-group { margin-bottom: .85rem; }
 .form-group label {
   display: block;
-  font-size: .7rem;
+  font-size: .78rem;
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -537,8 +537,8 @@ img { display: block; max-width: 100%; }
 }
 .footer__brand .dot { color: var(--accent); }
 .footer__info {
-  font-size: .78rem;
-  color: rgba(255,255,255,.35);
+  font-size: .82rem;
+  color: rgba(255,255,255,.65);
   margin-top: .2rem;
   line-height: 1.6;
 }
@@ -548,15 +548,15 @@ img { display: block; max-width: 100%; }
   flex-wrap: wrap;
 }
 .footer__links a {
-  font-size: .78rem;
-  color: rgba(255,255,255,.35);
+  font-size: .82rem;
+  color: rgba(255,255,255,.65);
   transition: color .15s;
 }
 .footer__links a:hover { color: rgba(255,255,255,.7); text-decoration: none; }
 .footer__copy {
   width: 100%;
-  font-size: .72rem;
-  color: rgba(255,255,255,.2);
+  font-size: .78rem;
+  color: rgba(255,255,255,.5);
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255,255,255,.07);
   margin-top: .5rem;
@@ -662,6 +662,17 @@ img { display: block; max-width: 100%; }
 @media (max-width: 380px) {
   .hero__phone-num { font-size: 1.4rem; }
   .stat__val { font-size: 1rem; }
+}
+
+/* Accessible mais invisible visuellement */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -59,7 +59,7 @@
       <a href="#pourquoi">Pourquoi nous</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="tel:+33385573134" class="nav__tel">03 85 57 31 34</a>
+    <a href="tel:+33385573134" class="nav__tel" aria-label="Appeler PhoneRep au 03 85 57 31 34">03 85 57 31 34</a>
     <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -68,7 +68,7 @@
     <a href="#services">Services</a>
     <a href="#pourquoi">Pourquoi nous</a>
     <a href="#contact">Contact & horaires</a>
-    <a href="tel:+33385573134" style="color: var(--accent); font-weight:800;">03 85 57 31 34</a>
+    <a href="tel:+33385573134" style="color: var(--accent); font-weight:800;" aria-label="Appeler PhoneRep depuis le menu mobile">03 85 57 31 34</a>
   </nav>
 </header>
 
@@ -177,28 +177,28 @@
           <div class="why__point">
             <div class="why-point__head">
               <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-              <h4>Devis gratuit, sans engagement</h4>
+              <h3>Devis gratuit, sans engagement</h3>
             </div>
             <p>On examine votre appareil et on vous annonce le prix avant toute intervention. Si vous ne souhaitez pas continuer, vous ne payez rien.</p>
           </div>
           <div class="why__point">
             <div class="why-point__head">
               <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <h4>Réparation rapide</h4>
+              <h3>Réparation rapide</h3>
             </div>
             <p>La plupart des pannes courantes — écran, batterie, connecteur — sont réparées dans la journée.</p>
           </div>
           <div class="why__point">
             <div class="why-point__head">
               <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <h4>Garantie sur les réparations</h4>
+              <h3>Garantie sur les réparations</h3>
             </div>
             <p>Toutes nos réparations sont garanties. On utilise des pièces de qualité et on assume notre travail.</p>
           </div>
           <div class="why__point">
             <div class="why-point__head">
               <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <h4>En centre-ville, sans rendez-vous</h4>
+              <h3>En centre-ville, sans rendez-vous</h3>
             </div>
             <p>6 rue Danton, Montceau-les-Mines. Venez directement pendant les horaires d'ouverture.</p>
           </div>
@@ -250,7 +250,7 @@
         <div class="info-block">
           <span class="info-block__lbl">Téléphone</span>
           <p class="info-block__val">
-            <a href="tel:+33385573134">03 85 57 31 34</a>
+            <a href="tel:+33385573134" aria-label="Appeler PhoneRep au 03 85 57 31 34 depuis la section contact">03 85 57 31 34</a>
           </p>
         </div>
         <div class="info-block">
@@ -262,14 +262,15 @@
         <div class="info-block">
           <span class="info-block__lbl">Horaires d'ouverture</span>
           <div class="info-block__val">
-            <table class="sched" aria-label="Horaires d'ouverture">
+            <table class="sched">
+              <caption class="sr-only">Horaires d'ouverture de PhoneRep</caption>
               <tbody>
-                <tr><td>Lundi</td><td class="closed">Fermé</td></tr>
-                <tr><td>Mardi</td><td>9h30 – 12h / 14h30 – 18h</td></tr>
-                <tr><td>Mercredi</td><td>9h30 – 12h / 14h30 – 18h</td></tr>
-                <tr><td>Jeudi</td><td>9h30 – 12h / 14h30 – 18h</td></tr>
-                <tr><td>Vendredi</td><td>9h30 – 12h / 14h30 – 18h</td></tr>
-                <tr><td>Samedi</td><td class="closed">Fermé</td></tr>
+                <tr><th scope="row">Lundi</th><td class="closed">Fermé</td></tr>
+                <tr><th scope="row">Mardi</th><td>9h30 – 12h / 14h30 – 18h</td></tr>
+                <tr><th scope="row">Mercredi</th><td>9h30 – 12h / 14h30 – 18h</td></tr>
+                <tr><th scope="row">Jeudi</th><td>9h30 – 12h / 14h30 – 18h</td></tr>
+                <tr><th scope="row">Vendredi</th><td>9h30 – 12h / 14h30 – 18h</td></tr>
+                <tr><th scope="row">Samedi</th><td class="closed">Fermé</td></tr>
               </tbody>
             </table>
           </div>
