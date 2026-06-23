@@ -353,7 +353,7 @@ img { display: block; max-width: 100%; }
   object-fit: cover;
   object-position: center 70%;
   aspect-ratio: 16/9;
-  max-height: 220px;
+  max-height: 270px;
   display: block;
 }
 .why__points { margin-top: 2.5rem; }
