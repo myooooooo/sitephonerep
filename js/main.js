@@ -82,6 +82,27 @@ if (form) {
   });
 }
 
+// Animations au scroll
+const animEls = document.querySelectorAll('.anim');
+if (animEls.length) {
+  const animObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('anim--visible'); animObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  animEls.forEach(el => animObs.observe(el));
+}
+
+// CTA mobile fixe — masquer quand on est sur la section contact
+const mobileCta = document.getElementById('mobile-cta');
+if (mobileCta) {
+  const contactSection = document.getElementById('contact');
+  const ctaObs = new IntersectionObserver(entries => {
+    entries.forEach(e => mobileCta.classList.toggle('hidden', e.isIntersecting));
+  }, { threshold: 0.3 });
+  if (contactSection) ctaObs.observe(contactSection);
+}
+
 // FAQ accordion
 document.querySelectorAll('.faq-trigger').forEach(trigger => {
   trigger.addEventListener('click', () => {
