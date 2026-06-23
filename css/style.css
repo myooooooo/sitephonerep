@@ -83,12 +83,12 @@ img { display: block; max-width: 100%; }
 .nav__tel {
   font-size: .85rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--accent);
   text-decoration: none;
   flex-shrink: 0;
   transition: color .15s;
 }
-.nav__tel:hover { color: var(--accent); text-decoration: none; }
+.nav__tel:hover { color: var(--accent-d); text-decoration: none; }
 .nav__burger {
   display: none;
   flex-direction: column;
