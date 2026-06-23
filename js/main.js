@@ -47,8 +47,8 @@ if (form) {
     const panne    = form.querySelector('[name="panne"]').value.trim();
 
     // Validation simple
-    if (!nom || !appareil || !panne) {
-      showError('Merci de remplir votre nom, l\'appareil et la description de la panne.');
+    if (!nom || !tel || !appareil || !panne) {
+      showError('Merci de remplir tous les champs obligatoires (*).');
       return;
     }
 
@@ -60,7 +60,7 @@ if (form) {
       `Vous avez reçu une nouvelle demande de réparation depuis votre site.\n\n` +
       `━━━━━━━━━━━━━━━━━━━━\n` +
       `Nom : ${nom}\n` +
-      (tel ? `Téléphone : ${tel}\n` : '') +
+      `Téléphone : ${tel}\n` +
       `Appareil : ${appareil}\n\n` +
       `Description de la panne :\n${panne}\n` +
       `━━━━━━━━━━━━━━━━━━━━\n\n` +
