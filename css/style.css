@@ -280,7 +280,18 @@ img { display: block; max-width: 100%; }
   font-weight: 700;
   color: var(--ink);
   letter-spacing: -.01em;
+  display: flex;
+  align-items: center;
+  gap: .85rem;
 }
+.menu-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--ink-3);
+  transition: color .15s;
+}
+.menu-item:hover .menu-icon { color: var(--accent); }
 .menu-item__desc {
   font-size: .88rem;
   color: var(--ink-2);
@@ -331,6 +342,25 @@ img { display: block; max-width: 100%; }
 .stat:nth-child(2) { border-right: none; }
 .stat:nth-child(3) { border-bottom: none; border-right: 1px solid var(--border); }
 .stat:nth-child(4) { border-bottom: none; border-right: none; }
+.stat-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+  margin-bottom: .6rem;
+  display: block;
+}
+.why-point__head {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: .25rem;
+}
+.why-icon {
+  width: 17px;
+  height: 17px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
 .stat__val {
   font-family: var(--font-d);
   font-size: 1.5rem;
