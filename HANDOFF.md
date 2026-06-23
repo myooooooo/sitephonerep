@@ -1,106 +1,143 @@
-# Handoff — Site PhoneRep
+# Handoff — PhoneRep
+Site vitrine · Montceau-les-Mines · Juin 2026  
+Développé par **Zineb Anssafou**, étudiante BUT MMI
 
-## Contexte
-Site vitrine pour PhoneRep, boutique de réparation de téléphones et tablettes du père de l'utilisateur, située à Montceau-les-Mines (71). Projet démarré from scratch dans cette session.
+---
 
 ## Infos entreprise
-- **Raison sociale** : PHONE REP (SAS, capital 1 000 €)
-- **Dirigeant** : Messaoud Anssafou
-- **SIRET** : 829 018 894 00024
-- **Adresse** : 7 rue Danton, 71300 Montceau-les-Mines ⚠️ le registre dit "7" mais certaines sources disent "6" — à confirmer
-- **Téléphone** : 03 85 57 31 34
-- **Email** : phonerep71@hotmail.com
-- **Fondée en** : 2007 (plus de 20 ans d'expérience)
-- **Horaires** : Mardi–Jeudi 9h30–12h / 14h30–18h · Vendredi 9h30–12h / **15h**–18h · Lundi & Samedi fermés
 
-## Repo GitHub
-- **URL** : https://github.com/myooooooo/sitephonerep
-- **Compte** : myooooooo
-- **GitHub Pages** : https://myooooooo.github.io/sitephonerep/
-- **Domaine visé** : phonerep.fr (acheté chez Infomaniak, pas encore connecté)
+| Champ | Valeur |
+|---|---|
+| Raison sociale | PHONE REP (SAS, capital 1 000 €) |
+| Dirigeant | Messaoud Anssafou |
+| SIRET | 829 018 894 00024 |
+| RCS | Chalon-sur-Saône, numéro 829 018 894 |
+| TVA | FR71829018894 |
+| Adresse | 7 rue Danton, 71300 Montceau-les-Mines ✅ confirmé Google Maps |
+| Téléphone | 03 85 57 31 34 |
+| Email | phonerep71@hotmail.com |
+| Fondée | 2007 (+ de 20 ans d'expérience) |
+| Horaires | Mar–Jeu 9h30–12h / 14h30–18h · Ven 9h30–12h / 15h–18h · Lun & Sam fermés |
 
-## 3 branches / versions
-| Branche | Description | État |
-|---|---|---|
-| `main` | Hero sombre, cards services, FAQ, style sobre & typographique | ✅ Production-ready |
-| `design-moderne` | Même structure + pill buttons, icônes cercles rouges, glow hero, animations scroll, CTA mobile fixe | ✅ Complet |
-| `revamp` | Hero split 2 colonnes, "20" géant outlined, stats bande noire, cartes numérotées, bande CTA rouge, processus 4 étapes, footer clair | ✅ Complet |
+---
 
-**GitHub Pages est actuellement sur** : `revamp` (dernier activé)
+## Déploiement
 
-## Services proposés (sans dégâts des eaux)
-1. Écran cassé — **le jour même**
-2. Batterie — **le jour même**
-3. Connecteur de charge
-4. Caméra
-5. Tablettes
+| | URL |
+|---|---|
+| GitHub repo | https://github.com/myooooooo/sitephonerep |
+| GitHub Pages | https://myooooooo.github.io/sitephonerep/ |
+| Vercel | Connecté au repo, déploiement auto sur push `main` |
+| Domaine cible | phonerep.fr — **pas encore acheté** |
 
-## Vente d'accessoires
-- Vitre de protection hydrogel
-- Chargeur (USB-C, Lightning, Micro-USB)
-- Housse & étui
+---
 
-## Stack technique
-- HTML5 / CSS3 / Vanilla JS — pas de framework
-- Font : Manrope via fonts.bunny.net (RGPD-safe, pas Google Fonts)
-- Icônes : SVG inline (pas de librairie)
-- Hébergement actuel : GitHub Pages (gratuit)
-- Hébergement cible : Infomaniak
+## Google Business Profile
 
-## Ce qui est fait
-- [x] Site complet responsive mobile-first
-- [x] SEO : title, meta description, Open Graph, Schema.org LocalBusiness, robots.txt, sitemap.xml, canonical
-- [x] Accessibilité WCAG AA : contraste corrigé, aria-labels, th/scope, sr-only, heading hierarchy
-- [x] Mentions légales complètes (SIRET, dirigeant, hébergeur Infomaniak)
-- [x] Politique de confidentialité RGPD (droits art. 15–21, CNIL, Fonts Bunny, Google Maps)
-- [x] Formulaire de contact → génère un email proprement formaté via mailto
-- [x] Google Maps embed (recherche par nom "Phonerep Montceau-les-Mines")
-- [x] FAQ accordéon JS
-- [x] Handoff.html (document visuel de référence)
-- [x] 3 versions design en branches séparées
+- Fiche **existante** sur Google Maps
+- Note : **3,8 / 5** · **66 avis**
+- Statut : **non revendiquée** ⚠️
+- Une lettre avec un PIN a été reçue par courrier → à entrer sur business.google.com
+
+---
+
+## Structure des fichiers
+
+```
+index.html                      Page principale (one-page)
+css/style.css                   Tous les styles
+js/main.js                      Nav mobile, FAQ accordéon, formulaire
+mentions-legales.html           Mentions légales LCEN
+politique-confidentialite.html  Politique RGPD complète
+HANDOFF.md                      Ce document
+images/
+  reparateur.jpg                Photo hero (technicien + téléphone ouvert)
+  atelier.jpg                   Photo section "Pourquoi nous"
+  favicon.svg                   Favicon SVG — smartphone blanc sur rouge
+favicon.ico                     Favicon ICO (16 + 32 px)
+favicon-16.png                  Favicon PNG 16×16
+favicon-32.png                  Favicon PNG 32×32
+robots.txt                      Instructions crawlers
+sitemap.xml                     Sitemap SEO (URL phonerep.fr, lastmod 2026-06-23)
+```
+
+---
+
+## Ordre des sections (index.html)
+
+1. **Hero** — titre + photo split 2 colonnes, tél rouge cliquable, CTA devis
+2. **Services** — 5 pannes en cards (écran, batterie, connecteur, caméra, tablettes)
+3. **Pourquoi nous** — 4 arguments + 4 stats + photo atelier
+4. **Avis clients** — 3,8/5 · 66 avis · 3 vrais témoignages Google
+5. **Accessoires** — vitre hydrogel, chargeur, housse
+6. **Contact** — infos + horaires + formulaire (nom, tél, appareil, panne, RGPD)
+7. **FAQ** — accordéon JS, 7 questions dont zone géographique
+8. **Google Maps** — embed + bouton itinéraire CTA rouge
+9. **Footer** — logo, liens légaux, copyright, crédit Zineb
+
+---
+
+## Design tokens
+
+| Token | Valeur |
+|---|---|
+| Accent rouge | `#CC1414` |
+| Texte | `#111111` |
+| Texte secondaire | `#555550` |
+| Texte tertiaire | `#686864` |
+| Fond principal | `#F7F6F4` |
+| Fond sections alt | `#EEECEA` |
+| Police titres | Manrope 800 (fonts.bunny.net — RGPD-safe) |
+| Police corps | System UI (sans requête externe) |
+
+---
+
+## Ce qui est fait ✅
+
+### Légal
+- Mentions légales LCEN complètes (SIRET, RCS, TVA, hébergeur, médiation, droit applicable)
+- Politique RGPD complète : données collectées corrigées (tél obligatoire, modèle appareil), Fonts Bunny, Google Maps + transfert hors UE, hébergeur GitHub Pages (art. 6.1.f), DPO non obligatoire
+- Formulaire RGPD : case à cocher obligatoire, champ tél required
+
+### SEO
+- Schema.org `LocalBusiness` (adresse, horaires, tél, fondation)
+- Title enrichi avec "depuis 2007 · 71300"
+- Meta description avec marques + J+0 + sans rendez-vous
+- FAQ zone géo : Blanzy, Le Creusot, Chalon-sur-Saône, Saône-et-Loire
+- Textes services : iPhone, Samsung Galaxy, Xiaomi, Galaxy Tab nommés
+- sitemap.xml : URL phonerep.fr + date 2026
+- robots.txt, balise canonical, Open Graph
+
+### UX / Conversion
+- Sticky bar mobile fixe (tél + bouton devis)
+- Tél nav toujours rouge
+- Hero sous-titre renforcé
+- Bouton CTA rouge "Itinéraire Google Maps" centré mobile
+- Contact : adresse/tél/email centré sur mobile
+- Section Avis : 3 vrais témoignages Google (Gaëtan G., Didier T. Local Guide, Christiane M.)
+
+### Tech
+- Favicon refait : smartphone moderne SVG + PNG 16/32 + ICO
+- Images poussées sur GitHub (photos + favicons)
+- Déployé sur Vercel (auto-deploy sur push main)
+- Crédit développeuse dans footer des 3 pages
+
+---
 
 ## Ce qui reste à faire
-### Prioritaire
-- [ ] Choisir une version (main / design-moderne / revamp) et l'activer sur GitHub Pages
-- [ ] Connecter phonerep.fr chez Infomaniak → CNAME www + 4 A records GitHub Pages
-- [ ] Mettre à jour l'URL canonical dans index.html, sitemap.xml une fois le domaine connecté
 
-### Important
-- [ ] Confirmer adresse : **6 ou 7** rue Danton
-- [ ] Créer/optimiser fiche Google Business Profile (capital pour le SEO local)
+### 🔴 Prioritaire
+- [ ] **Revendiquer Google Business Profile** — retrouver la lettre PIN → business.google.com → entrer le code → ajouter site web + photos
+- [ ] **Acheter phonerep.fr** — puis configurer DNS vers Vercel chez Infomaniak, mettre à jour canonical/og:url/schema dans index.html
 
-### Recommandé
-- [ ] Ajouter photos réelles (boutique, atelier, réparateur)
-- [ ] Ajouter avis clients (3–5 suffisent)
-- [ ] Remplacer le formulaire mailto par Formspree (formspree.io, gratuit 50 envois/mois) pour que le client reçoive les emails directement sans que l'expéditeur ait à ouvrir son client mail
+### 🟡 Important
+- [ ] **Google Search Console** — après domaine connecté : vérifier via DNS TXT, soumettre sitemap.xml *(pas de traceur ajouté au site)*
+- [ ] **Photos boutique** — ajouter sur Google Business après revendication (extérieur, atelier, réparations en cours)
 
-## Préférences utilisateur (feedback sessions)
-- Pas de design "trop IA" / template (cartes identiques, emojis dans boîtes, dégradés génériques)
-- Le numéro de téléphone doit être très visible
-- Rouge comme accent principal (pas bleu)
-- Mentions légales et RGPD complets et corrects
-- Formulaire : téléphone obligatoire
-- "Depuis 2007" / "20 ans d'expérience" = argument clé à mettre en avant
+### 🟢 Recommandé
+- [ ] **Formspree** — remplacer `mailto:` du formulaire par Formspree.io (gratuit 50 envois/mois → livraison directe sur phonerep71@hotmail.com)
+- [ ] **Avis supplémentaires** — Edith Ciron et Riyan Zaidi disponibles pour compléter la section (passer à 5 témoignages)
 
-## Fichiers principaux
-```
-sitephonerep/
-├── index.html                   # Page principale
-├── mentions-legales.html        # Légal LCEN
-├── politique-confidentialite.html # RGPD
-├── handoff.html                 # Document de référence visuel
-├── HANDOFF.md                   # Ce fichier
-├── robots.txt
-├── sitemap.xml
-├── css/style.css
-└── js/main.js
-```
+---
 
-## Pour connecter le domaine Infomaniak → GitHub Pages
-1. Chez Infomaniak (DNS) : ajouter CNAME `www` → `myooooooo.github.io` + 4 enregistrements A :
-   - 185.199.108.153
-   - 185.199.109.153
-   - 185.199.110.153
-   - 185.199.111.153
-2. Sur GitHub : Settings → Pages → Custom domain → `phonerep.fr` → Save
-3. Dans le code : remplacer `https://phonerep.fr/` partout (canonical, og:url, schema, sitemap)
+*Projet PhoneRep · Handoff juin 2026 · GitHub : myooooooo/sitephonerep*
