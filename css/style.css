@@ -668,12 +668,20 @@ img { display: block; max-width: 100%; }
    HERO – depuis 2007
    ============================================ */
 .hero__since {
-  display: inline-block;
-  font-size: .88rem;
-  font-weight: 700;
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.65);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+.hero__since strong {
   color: var(--accent);
-  margin-bottom: 1.25rem;
-  letter-spacing: .01em;
+  font-size: 1.2rem;
+  font-weight: 800;
+  display: block;
+  margin-top: .15rem;
+  letter-spacing: -.01em;
 }
 
 /* ============================================
