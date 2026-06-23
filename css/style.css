@@ -654,6 +654,9 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 640px) {
+  /* Contact : centrage adresse/tél/email (pas les horaires) */
+  .contact__infos .info-block:not(:last-child) { text-align: center; }
+
   /* Espacement réduit */
   .container { padding: 0 1.25rem; }
   .section { padding: 3rem 0; }
