@@ -213,6 +213,19 @@ img { display: block; max-width: 100%; }
   background: rgba(255,255,255,.05);
   text-decoration: none;
 }
+.hero__cta--red {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.hero__cta--red:hover {
+  background: var(--accent-d);
+  border-color: var(--accent-d);
+  color: #fff;
+}
+
+/* Nav links plus lisibles */
+.nav__links a { color: var(--ink); }
 
 /* ============================================
    SECTION HEADERS
