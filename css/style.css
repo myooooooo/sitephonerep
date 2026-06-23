@@ -614,13 +614,54 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 640px) {
-  .section { padding: 3.5rem 0; }
-  .hero { padding: 3.5rem 0 3rem; }
-  .menu-item { grid-template-columns: 1fr; gap: .5rem; padding: 1.5rem 0; }
-  .hero__bottom { flex-direction: column; align-items: flex-start; }
-  .form-row { grid-template-columns: 1fr; }
-  .footer__inner { flex-direction: column; align-items: flex-start; }
+  /* Espacement réduit */
+  .container { padding: 0 1.25rem; }
+  .section { padding: 3rem 0; }
+  .hero { padding: 2.5rem 0 2.5rem; }
+
+  /* Hero */
+  .hero__title { letter-spacing: -.03em; }
+  .hero__sub { font-size: .88rem; margin-bottom: 2rem; }
+  .hero__bottom { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .hero__cta, .hero__cta--red {
+    width: 100%;
+    justify-content: center;
+    padding: .85rem 1rem;
+  }
+
+  /* Services */
+  .menu-item { grid-template-columns: 1fr; gap: .4rem; padding: 1.25rem 0; }
+  .menu-item__desc { font-size: .85rem; }
+
+  /* Stats : 2 colonnes sur mobile */
   .stats { grid-template-columns: 1fr 1fr; }
+  .stat { padding: 1.25rem 1rem; }
+  .stat__val { font-size: 1.2rem; }
+
+  /* Formulaire */
+  .form-box { padding: 1.5rem 1.25rem; }
+  .form-row { grid-template-columns: 1fr; }
+
+  /* iOS : empêche le zoom auto sur les inputs */
+  .form-group input,
+  .form-group textarea { font-size: 1rem; }
+
+  /* Map moins haute sur mobile */
+  .map-wrap iframe { height: 280px; }
+  .map-bar { padding: .85rem 1.25rem; gap: 1rem; font-size: .78rem; }
+
+  /* Footer */
+  .footer__inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .footer__links { flex-direction: row; flex-wrap: wrap; gap: .75rem 1.25rem; }
+
+  /* Legal */
+  .legal { padding: 2.5rem 0 4rem; }
+}
+
+/* Très petits écrans */
+@media (max-width: 380px) {
+  .hero__phone-num { font-size: 1.4rem; }
+  .stat__val { font-size: 1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
