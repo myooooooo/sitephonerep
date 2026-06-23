@@ -872,6 +872,69 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============================================
+   AVIS CLIENTS
+   ============================================ */
+.avis-rating {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+.avis-rating__note {
+  font-family: var(--font-d);
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  color: var(--ink);
+  line-height: 1;
+}
+.avis-stars {
+  display: block;
+  font-size: 1rem;
+  color: #F59E0B;
+  letter-spacing: .05em;
+  margin-bottom: .2rem;
+}
+.avis-rating__count {
+  font-size: .8rem;
+  color: var(--ink-3);
+}
+.avis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.avis-card {
+  background: #fff;
+  padding: 1.75rem;
+}
+.avis-card .avis-stars { margin-bottom: .85rem; }
+.avis-text {
+  font-style: normal;
+  font-size: .9rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.avis-name {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--ink);
+  font-style: normal;
+  display: block;
+}
+.avis-name span { font-weight: 400; color: var(--ink-3); }
+.avis-cta-google { margin-top: 2rem; font-size: .88rem; font-weight: 600; }
+.avis-cta-google a { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .avis-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .avis-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================
    STICKY CTA MOBILE
    ============================================ */
 .sticky-call {
