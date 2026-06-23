@@ -702,8 +702,8 @@ img { display: block; max-width: 100%; }
 
   /* Map moins haute sur mobile */
   .map-wrap iframe { height: 280px; }
-  .map-bar { padding: .85rem 1.25rem; gap: 1rem; font-size: .78rem; flex-direction: column; align-items: center; text-align: center; }
-  .map-bar a { margin-left: 0; }
+  .map-bar { padding: 1.5rem 1.25rem 1.1rem; gap: .6rem; font-size: .78rem; flex-direction: column; align-items: center; text-align: center; }
+  .map-bar a { margin-left: 0; margin-top: .4rem; }
 
   /* Footer */
   .footer__inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
