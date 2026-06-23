@@ -132,7 +132,31 @@ img { display: block; max-width: 100%; }
 .hero {
   background: var(--ink);
   color: #fff;
-  padding: 5rem 0 4.5rem;
+  overflow: hidden;
+}
+.hero__split {
+  display: flex;
+  align-items: stretch;
+  min-height: 580px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.hero__content {
+  flex: 1 1 55%;
+  padding: 5rem 3rem 4.5rem 2rem;
+}
+.hero__image-wrap {
+  flex: 0 0 42%;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 2.5rem 0;
+}
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
 }
 .hero__eyebrow {
   font-size: .72rem;
@@ -276,6 +300,7 @@ img { display: block; max-width: 100%; }
   flex-shrink: 0;
 }
 .service-note a { color: var(--accent); font-weight: 600; }
+.services__cta { margin-top: 2.5rem; }
 
 .menu { border-top: 1px solid var(--border); }
 .menu-item {
@@ -320,6 +345,15 @@ img { display: block; max-width: 100%; }
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
   align-items: start;
+}
+.why__right { display: flex; flex-direction: column; gap: 2rem; }
+.why__photo {
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+  object-position: center 70%;
+  aspect-ratio: 4/3;
+  display: block;
 }
 .why__points { margin-top: 2.5rem; }
 .why__point {
@@ -470,7 +504,9 @@ img { display: block; max-width: 100%; }
 .form-group input:focus,
 .form-group textarea:focus { border-color: var(--ink); background: #fff; }
 .form-group textarea { resize: vertical; min-height: 90px; }
-.form-rgpd { font-size: .72rem; color: var(--ink-3); line-height: 1.5; margin-bottom: 1.25rem; }
+.form-rgpd { display: flex; align-items: flex-start; gap: .6rem; font-size: .72rem; color: var(--ink-3); line-height: 1.5; margin-bottom: 1.25rem; }
+.form-rgpd input[type="checkbox"] { flex-shrink: 0; margin-top: .15rem; width: 1rem; height: 1rem; accent-color: var(--red); cursor: pointer; }
+.form-rgpd label { cursor: pointer; }
 .form-rgpd a { color: var(--ink-2); text-decoration: underline; }
 .btn-submit {
   width: 100%;
@@ -611,6 +647,9 @@ img { display: block; max-width: 100%; }
   .contact__layout { grid-template-columns: 1fr; gap: 2.5rem; }
   .services-header { flex-direction: column; align-items: flex-start; }
   .service-note { text-align: left; max-width: 100%; }
+  .hero__split { flex-direction: column; }
+  .hero__content { padding: 2.5rem 1.25rem 2rem; flex: none; }
+  .hero__image-wrap { flex: none; height: 260px; }
 }
 
 @media (max-width: 640px) {
@@ -794,4 +833,131 @@ img { display: block; max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }
   html { scroll-behavior: auto; }
+}
+
+/* ============================================
+   HERO CHIPS
+   ============================================ */
+.hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-bottom: 2.5rem;
+}
+.hero__chip {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  padding: .28rem .7rem;
+  border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.55);
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* ============================================
+   AVIS CLIENTS
+   ============================================ */
+.avis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+.avis-card {
+  background: #fff;
+  padding: 2rem 2rem 1.75rem;
+}
+.avis-card--featured {
+  grid-row: span 2;
+  background: var(--ink);
+}
+.avis-stars {
+  font-size: 1rem;
+  color: #F59E0B;
+  letter-spacing: .05em;
+  margin-bottom: 1.1rem;
+}
+.avis-text {
+  font-style: normal;
+  font-size: .92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+.avis-card--featured .avis-text {
+  color: rgba(255,255,255,.75);
+  font-size: .95rem;
+}
+.avis-name {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--ink);
+  font-style: normal;
+  display: block;
+}
+.avis-name span { font-weight: 400; color: var(--ink-3); }
+.avis-card--featured .avis-name { color: rgba(255,255,255,.9); }
+.avis-card--featured .avis-name span { color: rgba(255,255,255,.4); }
+.avis-cta-google {
+  margin-top: 2rem;
+  font-size: .88rem;
+  font-weight: 600;
+}
+.avis-cta-google a { color: var(--accent); }
+
+@media (max-width: 640px) {
+  .avis-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .avis-card--featured { grid-row: span 1; }
+}
+
+/* ============================================
+   STICKY CTA MOBILE
+   ============================================ */
+.sticky-call {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 200;
+  background: var(--ink);
+  border-top: 2px solid var(--accent);
+  align-items: center;
+  justify-content: space-between;
+  padding: .75rem 1.25rem;
+  gap: 1rem;
+}
+.sticky-call__tel {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  color: #fff;
+  font-family: var(--font-d);
+  font-size: .95rem;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  text-decoration: none;
+  flex: 1;
+}
+.sticky-call__tel svg { flex-shrink: 0; color: var(--accent); }
+.sticky-call__cta {
+  background: var(--accent);
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 700;
+  padding: .65rem 1.15rem;
+  border-radius: 3px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background .15s;
+}
+.sticky-call__cta:hover { background: var(--accent-d); text-decoration: none; }
+
+@media (max-width: 640px) {
+  .sticky-call { display: flex; }
+  body { padding-bottom: 62px; }
 }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Handoff — PhoneRep</title>
+  <title>Handoff - PhoneRep</title>
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=manrope:400,600,700,800&display=swap" rel="stylesheet">
   <style>
@@ -17,32 +17,15 @@
     body { font-family: var(--font); background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.6; }
     a { color: var(--red); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    /* Layout */
     .page { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 6rem; }
-
-    /* Header */
     .hd-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 3px solid var(--red); }
     .hd-logo { font-size: 1.3rem; font-weight: 800; letter-spacing: -.02em; }
     .hd-logo span { color: var(--red); }
     .hd-badge { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: var(--red); color: white; padding: .3rem .8rem; border-radius: 100px; }
     .hd-title { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; margin-bottom: .4rem; }
     .hd-sub { color: var(--ink-2); font-size: .9rem; }
-
-    /* Sections */
     .section { margin-bottom: 3rem; }
     h2 { font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); margin-bottom: 1.25rem; padding-bottom: .6rem; border-bottom: 1px solid var(--border); }
-
-    /* Versions */
-    .versions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .version-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
-    .version-card__label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: .4rem; }
-    .version-card__name { font-size: 1rem; font-weight: 800; margin-bottom: .4rem; }
-    .version-card__desc { font-size: .8rem; color: var(--ink-2); line-height: 1.6; margin-bottom: 1rem; }
-    .version-card__link { display: inline-flex; align-items: center; gap: .35rem; font-size: .8rem; font-weight: 700; color: var(--red); }
-    .branch-tag { display: inline-block; font-size: .68rem; font-weight: 700; background: #f0f0f0; color: var(--ink-2); padding: .15rem .5rem; border-radius: 4px; font-family: monospace; margin-left: .4rem; }
-
-    /* Tokens */
     .tokens { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .token-group h3 { font-size: .82rem; font-weight: 700; color: var(--ink-2); margin-bottom: .75rem; }
     .color-row { display: flex; align-items: center; gap: .75rem; margin-bottom: .5rem; }
@@ -53,8 +36,6 @@
     .font-row { margin-bottom: .6rem; }
     .font-sample { font-weight: 800; font-size: 1.1rem; letter-spacing: -.02em; margin-bottom: .1rem; }
     .font-meta { font-size: .78rem; color: var(--ink-3); }
-
-    /* Todo */
     .todo-list { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
     .todo-list li { display: flex; align-items: flex-start; gap: .75rem; font-size: .88rem; padding: .75rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 6px; }
     .todo-list li .icon { flex-shrink: 0; font-size: 1rem; margin-top: .05rem; }
@@ -65,24 +46,22 @@
     .p-high { background: #FEE2E2; color: #991B1B; }
     .p-med  { background: #FEF3C7; color: #92400E; }
     .p-low  { background: #ECFDF5; color: #065F46; }
-
-    /* Files */
     .files { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
     .file-row { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: .85rem 1rem; font-size: .82rem; }
     .file-path { font-family: monospace; font-weight: 700; display: block; margin-bottom: .15rem; }
     .file-desc { color: var(--ink-3); font-size: .75rem; }
-
-    /* Info box */
     .info-box { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin-top: 1rem; }
     .info-row { display: flex; gap: 1rem; padding: .5rem 0; border-bottom: 1px solid var(--border); font-size: .88rem; }
     .info-row:last-child { border: none; }
     .info-key { font-weight: 700; width: 160px; flex-shrink: 0; color: var(--ink-2); }
     .info-val { color: var(--ink); }
     .info-val a { color: var(--red); }
-
-    /* Responsive */
+    .sections-order { display: flex; flex-direction: column; gap: .4rem; counter-reset: sec; }
+    .sec-item { display: flex; align-items: center; gap: .75rem; padding: .6rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 6px; font-size: .85rem; counter-increment: sec; }
+    .sec-item::before { content: counter(sec); font-weight: 800; color: var(--red); font-size: .8rem; width: 18px; flex-shrink: 0; }
+    .sec-name { font-weight: 700; }
+    .sec-desc { color: var(--ink-3); font-size: .78rem; margin-left: .5rem; }
     @media (max-width: 640px) {
-      .versions { grid-template-columns: 1fr; }
       .tokens { grid-template-columns: 1fr; }
       .files { grid-template-columns: 1fr; }
     }
@@ -91,124 +70,112 @@
 <body>
 <div class="page">
 
-  <!-- HEADER -->
   <div class="hd-top">
     <div class="hd-logo">Phone<span>Rep</span></div>
     <span class="hd-badge">Handoff document</span>
   </div>
   <h1 class="hd-title">Document de handoff</h1>
-  <p class="hd-sub">Site vitrine PhoneRep — Montceau-les-Mines — Juin 2026</p>
-
-  <!-- VERSIONS -->
-  <div class="section" style="margin-top: 2.5rem;">
-    <h2>3 versions disponibles</h2>
-    <p style="font-size:.85rem; color: var(--ink-2); margin-bottom: 1.25rem;">Activer la version souhaitée sur GitHub Pages : Settings → Pages → Branch → choisir la branche → Save.</p>
-    <div class="versions">
-      <div class="version-card">
-        <p class="version-card__label">Version 1</p>
-        <p class="version-card__name">Sobre & typographique <span class="branch-tag">main</span></p>
-        <p class="version-card__desc">Hero sombre plein écran, gros titre blanc, numéro de téléphone en rouge. Services en cartes, FAQ accordéon. Design épuré, sans animation.</p>
-        <a href="https://github.com/myooooooo/sitephonerep/tree/main" target="_blank" class="version-card__link">Voir la branche →</a>
-      </div>
-      <div class="version-card">
-        <p class="version-card__label">Version 2</p>
-        <p class="version-card__name">Peps & moderne <span class="branch-tag">design-moderne</span></p>
-        <p class="version-card__desc">Boutons pill, icônes dans cercles rouges, halo lumineux dans le hero, animations au scroll, CTA mobile fixe en bas d'écran.</p>
-        <a href="https://github.com/myooooooo/sitephonerep/tree/design-moderne" target="_blank" class="version-card__link">Voir la branche →</a>
-      </div>
-      <div class="version-card">
-        <p class="version-card__label">Version 3</p>
-        <p class="version-card__name">Revamp total <span class="branch-tag">revamp</span></p>
-        <p class="version-card__desc">Hero split 2 colonnes (sombre/clair) avec "20" géant outlined, bande stats noire, cartes numérotées, bande CTA rouge, section processus 4 étapes, footer clair.</p>
-        <a href="https://github.com/myooooooo/sitephonerep/tree/revamp" target="_blank" class="version-card__link">Voir la branche →</a>
-      </div>
-    </div>
-  </div>
+  <p class="hd-sub">Site vitrine PhoneRep · Montceau-les-Mines · Juin 2026</p>
 
   <!-- INFOS CLIENT -->
-  <div class="section">
+  <div class="section" style="margin-top: 2.5rem;">
     <h2>Informations de l'entreprise</h2>
     <div class="info-box">
       <div class="info-row"><span class="info-key">Raison sociale</span><span class="info-val">PHONE REP (SAS, capital 1 000 €)</span></div>
       <div class="info-row"><span class="info-key">Dirigeant</span><span class="info-val">Messaoud Anssafou</span></div>
       <div class="info-row"><span class="info-key">SIRET</span><span class="info-val">829 018 894 00024</span></div>
-      <div class="info-row"><span class="info-key">Adresse</span><span class="info-val">7 rue Danton, 71300 Montceau-les-Mines</span></div>
+      <div class="info-row"><span class="info-key">Adresse</span><span class="info-val">7 rue Danton, 71300 Montceau-les-Mines <strong style="color:var(--red)">⚠ à confirmer : 6 ou 7 ?</strong></span></div>
       <div class="info-row"><span class="info-key">Téléphone</span><span class="info-val"><a href="tel:+33385573134">03 85 57 31 34</a></span></div>
       <div class="info-row"><span class="info-key">Email</span><span class="info-val"><a href="mailto:phonerep71@hotmail.com">phonerep71@hotmail.com</a></span></div>
       <div class="info-row"><span class="info-key">Fondée en</span><span class="info-val">2007 (plus de 20 ans d'expérience)</span></div>
-      <div class="info-row"><span class="info-key">Horaires</span><span class="info-val">Mardi–Jeudi 9h30–12h / 14h30–18h · Vendredi 9h30–12h / 15h–18h · Lundi & Samedi fermés</span></div>
-      <div class="info-row"><span class="info-key">Hébergeur</span><span class="info-val">Infomaniak Network SA, Genève (à configurer) · actuellement GitHub Pages</span></div>
-      <div class="info-row"><span class="info-key">Domaine cible</span><span class="info-val">phonerep.fr (à connecter chez Infomaniak)</span></div>
+      <div class="info-row"><span class="info-key">Horaires</span><span class="info-val">Mar–Jeu 9h30–12h / 14h30–18h · Ven 9h30–12h / 15h–18h · Lun & Sam fermés</span></div>
+      <div class="info-row"><span class="info-key">GitHub Pages</span><span class="info-val"><a href="https://myooooooo.github.io/sitephonerep/" target="_blank">myooooooo.github.io/sitephonerep</a></span></div>
+      <div class="info-row"><span class="info-key">Domaine cible</span><span class="info-val">phonerep.fr (acheté chez Infomaniak, pas encore connecté)</span></div>
+    </div>
+  </div>
+
+  <!-- STRUCTURE DES SECTIONS -->
+  <div class="section">
+    <h2>Ordre des sections (page principale)</h2>
+    <div class="sections-order">
+      <div class="sec-item"><span class="sec-name">Hero</span><span class="sec-desc">Titre + photo atelier à droite, split 2 colonnes</span></div>
+      <div class="sec-item"><span class="sec-name">Services</span><span class="sec-desc">5 pannes courantes en cartes + pictos SVG</span></div>
+      <div class="sec-item"><span class="sec-name">Pourquoi nous</span><span class="sec-desc">4 arguments texte + 4 stats chiffres + photo atelier</span></div>
+      <div class="sec-item"><span class="sec-name">Accessoires</span><span class="sec-desc">3 produits en cartes : vitre hydrogel, chargeur, housse</span></div>
+      <div class="sec-item"><span class="sec-name">Contact</span><span class="sec-desc">Infos boutique + horaires + formulaire de contact</span></div>
+      <div class="sec-item"><span class="sec-name">FAQ</span><span class="sec-desc">Accordéon JS, 6 questions fréquentes</span></div>
+      <div class="sec-item"><span class="sec-name">Google Maps</span><span class="sec-desc">Embed iframe recherche "Phonerep Montceau-les-Mines"</span></div>
+      <div class="sec-item"><span class="sec-name">Footer</span><span class="sec-desc">Logo, liens légaux, copyright</span></div>
+    </div>
+  </div>
+
+  <!-- FICHIERS -->
+  <div class="section">
+    <h2>Structure des fichiers</h2>
+    <div class="files">
+      <div class="file-row"><span class="file-path">index.html</span><span class="file-desc">Page principale (one-page)</span></div>
+      <div class="file-row"><span class="file-path">css/style.css</span><span class="file-desc">Tous les styles</span></div>
+      <div class="file-row"><span class="file-path">js/main.js</span><span class="file-desc">Nav mobile, formulaire, FAQ accordéon</span></div>
+      <div class="file-row"><span class="file-path">mentions-legales.html</span><span class="file-desc">Mentions légales (LCEN)</span></div>
+      <div class="file-row"><span class="file-path">politique-confidentialite.html</span><span class="file-desc">Politique RGPD complète</span></div>
+      <div class="file-row"><span class="file-path">images/reparateur.jpg</span><span class="file-desc">Photo hero (atelier, téléphone ouvert)</span></div>
+      <div class="file-row"><span class="file-path">images/atelier.jpg</span><span class="file-desc">Photo section "Pourquoi nous" (tournevis/carte mère)</span></div>
+      <div class="file-row"><span class="file-path">favicon.ico</span><span class="file-desc">Favicon 16×16 + 32×32</span></div>
+      <div class="file-row"><span class="file-path">favicon-32.png</span><span class="file-desc">Favicon PNG 32×32</span></div>
+      <div class="file-row"><span class="file-path">images/favicon.svg</span><span class="file-desc">Favicon SVG (navigateurs modernes)</span></div>
+      <div class="file-row"><span class="file-path">robots.txt</span><span class="file-desc">Instructions robots de recherche</span></div>
+      <div class="file-row"><span class="file-path">sitemap.xml</span><span class="file-desc">Plan du site (SEO)</span></div>
     </div>
   </div>
 
   <!-- DESIGN TOKENS -->
   <div class="section">
-    <h2>Design tokens (communs aux 3 versions)</h2>
+    <h2>Design tokens</h2>
     <div class="tokens">
       <div class="token-group">
         <h3>Couleurs</h3>
-        <div class="color-row">
-          <div class="color-swatch" style="background:#CC1414"></div>
-          <div class="color-info"><span class="color-name">Accent (rouge)</span><span class="color-val">#CC1414</span></div>
-        </div>
-        <div class="color-row">
-          <div class="color-swatch" style="background:#111111"></div>
-          <div class="color-info"><span class="color-name">Ink (texte)</span><span class="color-val">#111111</span></div>
-        </div>
-        <div class="color-row">
-          <div class="color-swatch" style="background:#555550"></div>
-          <div class="color-info"><span class="color-name">Ink-2 (secondaire)</span><span class="color-val">#555550</span></div>
-        </div>
-        <div class="color-row">
-          <div class="color-swatch" style="background:#686864"></div>
-          <div class="color-info"><span class="color-name">Ink-3 (tertiaire)</span><span class="color-val">#686864</span></div>
-        </div>
-        <div class="color-row">
-          <div class="color-swatch" style="background:#F7F6F4; border:1px solid #ddd;"></div>
-          <div class="color-info"><span class="color-name">Paper (fond)</span><span class="color-val">#F7F6F4</span></div>
-        </div>
-        <div class="color-row">
-          <div class="color-swatch" style="background:#EEECEA; border:1px solid #ddd;"></div>
-          <div class="color-info"><span class="color-name">Paper-2 (sections)</span><span class="color-val">#EEECEA</span></div>
-        </div>
+        <div class="color-row"><div class="color-swatch" style="background:#CC1414"></div><div class="color-info"><span class="color-name">Accent (rouge)</span><span class="color-val">#CC1414</span></div></div>
+        <div class="color-row"><div class="color-swatch" style="background:#111111"></div><div class="color-info"><span class="color-name">Ink (texte)</span><span class="color-val">#111111</span></div></div>
+        <div class="color-row"><div class="color-swatch" style="background:#555550"></div><div class="color-info"><span class="color-name">Ink-2 (secondaire)</span><span class="color-val">#555550</span></div></div>
+        <div class="color-row"><div class="color-swatch" style="background:#686864"></div><div class="color-info"><span class="color-name">Ink-3 (tertiaire)</span><span class="color-val">#686864</span></div></div>
+        <div class="color-row"><div class="color-swatch" style="background:#F7F6F4; border:1px solid #ddd;"></div><div class="color-info"><span class="color-name">Paper (fond)</span><span class="color-val">#F7F6F4</span></div></div>
+        <div class="color-row"><div class="color-swatch" style="background:#EEECEA; border:1px solid #ddd;"></div><div class="color-info"><span class="color-name">Paper-2 (sections alt)</span><span class="color-val">#EEECEA</span></div></div>
       </div>
       <div class="token-group">
         <h3>Typographie</h3>
         <div class="font-row">
           <div class="font-sample" style="font-family:'Manrope',sans-serif;">PhoneRep</div>
-          <div class="font-meta">Manrope 800 — Titres, logo, chiffres clés<br>Source : fonts.bunny.net (RGPD-safe)</div>
+          <div class="font-meta">Manrope 800 · Titres, logo, chiffres clés<br>Source : fonts.bunny.net (RGPD-safe, pas Google Fonts)</div>
         </div>
-        <div class="font-row" style="margin-top: 1rem;">
-          <div class="font-sample" style="font-family:system-ui,sans-serif; font-weight:400;">Texte courant</div>
-          <div class="font-meta">System UI — Corps de texte, formulaire<br>Pas de requête externe nécessaire</div>
+        <div class="font-row" style="margin-top:1rem;">
+          <div class="font-sample" style="font-family:system-ui,sans-serif;font-weight:400;">Texte courant</div>
+          <div class="font-meta">System UI · Corps de texte, formulaire<br>Pas de requête externe</div>
         </div>
-        <div style="margin-top: 1.25rem;">
+        <div style="margin-top:1.25rem;">
           <h3>Tailles de base</h3>
-          <div style="font-size:.82rem; color: var(--ink-2); line-height: 2;">
-            H1 : clamp(2.8rem, 7vw, 5.5rem) — 800<br>
-            H2 : clamp(1.5rem, 2.5vw, 2rem) — 800<br>
-            Corps : 0.9–1rem — 400<br>
-            Labels : 0.78rem — 700, uppercase
+          <div style="font-size:.82rem; color:var(--ink-2); line-height:2;">
+            H1 : clamp(2.8rem, 7vw, 5.5rem) · 800<br>
+            H2 : clamp(1.5rem, 2.5vw, 2rem) · 800<br>
+            Corps : 0.9–1rem · 400<br>
+            Labels : 0.78rem · 700, uppercase
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- STRUCTURE FICHIERS -->
+  <!-- LÉGAL & SEO -->
   <div class="section">
-    <h2>Structure des fichiers</h2>
-    <div class="files">
-      <div class="file-row"><span class="file-path">index.html</span><span class="file-desc">Page principale (one-page)</span></div>
-      <div class="file-row"><span class="file-path">css/style.css</span><span class="file-desc">Tous les styles</span></div>
-      <div class="file-row"><span class="file-path">js/main.js</span><span class="file-desc">Nav mobile, formulaire, FAQ</span></div>
-      <div class="file-row"><span class="file-path">mentions-legales.html</span><span class="file-desc">Mentions légales (LCEN)</span></div>
-      <div class="file-row"><span class="file-path">politique-confidentialite.html</span><span class="file-desc">Politique RGPD complète</span></div>
-      <div class="file-row"><span class="file-path">robots.txt</span><span class="file-desc">Instructions robots de recherche</span></div>
-      <div class="file-row"><span class="file-path">sitemap.xml</span><span class="file-desc">Plan du site (SEO)</span></div>
-      <div class="file-row"><span class="file-path">handoff.html</span><span class="file-desc">Ce document (ne pas publier)</span></div>
-    </div>
+    <h2>Légal et SEO — déjà intégré</h2>
+    <ul class="todo-list">
+      <li class="done"><span class="icon">✅</span><div><span class="label">Mentions légales complètes (LCEN 2004)</span><span class="note">SIRET, dirigeant, hébergeur Infomaniak, droit applicable, médiation.</span></div></li>
+      <li class="done"><span class="icon">✅</span><div><span class="label">Politique de confidentialité RGPD</span><span class="note">Droits articles 15–21, CNIL, durée de conservation, Fonts Bunny, Google Maps.</span></div></li>
+      <li class="done"><span class="icon">✅</span><div><span class="label">Formulaire RGPD conforme</span><span class="note">Case à cocher obligatoire avec lien vers politique de confidentialité. Champ téléphone requis.</span></div></li>
+      <li class="done"><span class="icon">✅</span><div><span class="label">Schema.org LocalBusiness</span><span class="note">Données structurées pour Google : adresse, horaires, téléphone, année de fondation.</span></div></li>
+      <li class="done"><span class="icon">✅</span><div><span class="label">SEO complet</span><span class="note">Title, meta description, Open Graph, robots.txt, sitemap.xml, balise canonical, H1/H2/H3 correct.</span></div></li>
+      <li class="done"><span class="icon">✅</span><div><span class="label">Accessibilité WCAG AA</span><span class="note">Contraste corrigé, aria-labels, tableau th/scope, sr-only, hiérarchie headings.</span></div></li>
+      <li class="done"><span class="icon">✅</span><div><span class="label">Favicon</span><span class="note">ICO + PNG 32×32 + SVG. Picto téléphone blanc sur fond rouge #CC1414.</span></div></li>
+    </ul>
   </div>
 
   <!-- TODO -->
@@ -219,48 +186,40 @@
       <li>
         <span class="icon">🔴</span>
         <div>
-          <span class="label">Choisir et activer une version <span class="priority p-high">Prioritaire</span></span>
-          <span class="note">Aller sur GitHub → Settings → Pages → Branch → choisir main, design-moderne ou revamp</span>
+          <span class="label">Connecter le domaine phonerep.fr <span class="priority p-high">Prioritaire</span></span>
+          <span class="note">Chez Infomaniak (DNS) : CNAME www → myooooooo.github.io + 4 enregistrements A : 185.199.108.153 / .109 / .110 / .111. Puis GitHub Settings → Pages → Custom domain → phonerep.fr.</span>
         </div>
       </li>
 
       <li>
         <span class="icon">🔴</span>
         <div>
-          <span class="label">Connecter le domaine phonerep.fr <span class="priority p-high">Prioritaire</span></span>
-          <span class="note">Chez Infomaniak : ajouter CNAME www → myooooooo.github.io + 4 enregistrements A GitHub. Puis dans GitHub Settings → Pages → Custom domain.</span>
+          <span class="label">Mettre à jour les URLs canonical après connexion domaine <span class="priority p-high">Prioritaire</span></span>
+          <span class="note">Remplacer https://phonerep.fr/ dans : index.html (canonical, og:url, schema), sitemap.xml.</span>
         </div>
       </li>
 
       <li>
         <span class="icon">🟡</span>
         <div>
-          <span class="label">Mettre à jour les URLs canonical dans le code <span class="priority p-med">Important</span></span>
-          <span class="note">Changer https://phonerep.fr/ partout une fois le domaine confirmé. Fichiers : index.html (canonical + og:url + schema), sitemap.xml.</span>
+          <span class="label">Confirmer l'adresse : 6 ou 7 rue Danton ? <span class="priority p-med">Important</span></span>
+          <span class="note">Le registre officiel indique "7 rue Danton" mais d'autres sources disent "6". À confirmer avec Messaoud. Le site utilise actuellement "7".</span>
         </div>
       </li>
 
       <li>
         <span class="icon">🟡</span>
         <div>
-          <span class="label">Vérifier le numéro d'adresse (6 ou 7 rue Danton) <span class="priority p-med">Important</span></span>
-          <span class="note">Le registre officiel indique "7 rue Danton" mais d'autres sources disent "6". Le site utilise actuellement "7". À confirmer avec le propriétaire.</span>
-        </div>
-      </li>
-
-      <li>
-        <span class="icon">🟡</span>
-        <div>
-          <span class="label">Créer et optimiser la fiche Google Business Profile <span class="priority p-med">Important pour le SEO local</span></span>
-          <span class="note">Aller sur business.google.com, revendiquer ou créer la fiche PhoneRep, ajouter photos, horaires, description, répondre aux avis.</span>
+          <span class="label">Créer la fiche Google Business Profile <span class="priority p-med">SEO local</span></span>
+          <span class="note">business.google.com → revendiquer ou créer la fiche PhoneRep → ajouter photos, horaires, description. Capital pour apparaître dans les recherches locales.</span>
         </div>
       </li>
 
       <li>
         <span class="icon">🟢</span>
         <div>
-          <span class="label">Ajouter des photos réelles <span class="priority p-low">Recommandé</span></span>
-          <span class="note">Photo de la boutique, de l'atelier, du réparateur au travail. Formats : JPG/WebP, min 1200px de large. Ajouter dans la section hero ou une section dédiée.</span>
+          <span class="label">Remplacer le formulaire mailto par Formspree <span class="priority p-low">Recommandé</span></span>
+          <span class="note">Actuellement le formulaire ouvre le client mail de l'utilisateur. Formspree.io (gratuit, 50 envois/mois) envoie les demandes directement à phonerep71@hotmail.com sans client mail.</span>
         </div>
       </li>
 
@@ -268,56 +227,23 @@
         <span class="icon">🟢</span>
         <div>
           <span class="label">Ajouter des avis clients <span class="priority p-low">Recommandé</span></span>
-          <span class="note">3 à 5 avis suffisent. Récupérer depuis Google Maps ou demander directement aux clients. Créer une section "Avis" entre les services et le contact.</span>
+          <span class="note">3 à 5 avis suffisent. Récupérer depuis Google Maps ou demander directement aux clients. Ajouter une section entre Accessoires et Contact.</span>
         </div>
       </li>
 
       <li>
         <span class="icon">🟢</span>
         <div>
-          <span class="label">Améliorer le formulaire de contact (optionnel) <span class="priority p-low">Optionnel</span></span>
-          <span class="note">Actuellement le formulaire ouvre le client mail. Pour recevoir les demandes directement par email sans client mail, créer un compte gratuit sur formspree.io et remplacer l'action du formulaire.</span>
-        </div>
-      </li>
-
-      <li>
-        <span class="icon">🟢</span>
-        <div>
-          <span class="label">Mettre à jour le sitemap.xml <span class="priority p-low">SEO</span></span>
-          <span class="note">Changer la date lastmod et l'URL une fois le domaine connecté.</span>
+          <span class="label">Mettre à jour sitemap.xml <span class="priority p-low">SEO</span></span>
+          <span class="note">Changer la date lastmod et les URLs une fois le domaine phonerep.fr connecté.</span>
         </div>
       </li>
 
     </ul>
   </div>
 
-  <!-- LEGAL -->
-  <div class="section">
-    <h2>Légal — déjà intégré</h2>
-    <ul class="todo-list">
-      <li class="done"><span class="icon">✅</span><div><span class="label">Mentions légales (LCEN 2004)</span><span class="note">SIRET, dirigeant, hébergeur Infomaniak, droit applicable, médiation.</span></div></li>
-      <li class="done"><span class="icon">✅</span><div><span class="label">Politique de confidentialité (RGPD)</span><span class="note">Droits articles 15–21, CNIL, durée de conservation, Fonts Bunny, Google Maps.</span></div></li>
-      <li class="done"><span class="icon">✅</span><div><span class="label">Formulaire conforme</span><span class="note">Mention RGPD sous le formulaire, lien vers politique de confidentialité.</span></div></li>
-      <li class="done"><span class="icon">✅</span><div><span class="label">Schema.org LocalBusiness</span><span class="note">Données structurées pour Google : adresse, horaires, téléphone, année de fondation.</span></div></li>
-      <li class="done"><span class="icon">✅</span><div><span class="label">Accessibilité WCAG AA</span><span class="note">Contraste corrigé, balises sémantiques, aria-labels, tableau avec th/scope, sr-only.</span></div></li>
-    </ul>
-  </div>
-
-  <!-- SEO -->
-  <div class="section">
-    <h2>SEO — déjà intégré</h2>
-    <ul class="todo-list">
-      <li class="done"><span class="icon">✅</span><div><span class="label">Title + meta description optimisés</span></div></li>
-      <li class="done"><span class="icon">✅</span><div><span class="label">Open Graph (partage réseaux sociaux)</span></div></li>
-      <li class="done"><span class="icon">✅</span><div><span class="label">Schema.org LocalBusiness complet</span></div></li>
-      <li class="done"><span class="icon">✅</span><div><span class="label">robots.txt + sitemap.xml</span></div></li>
-      <li class="done"><span class="icon">✅</span><div><span class="label">Hiérarchie H1/H2/H3 correcte</span></div></li>
-      <li class="done"><span class="icon">✅</span><div><span class="label">Balise canonical</span></div></li>
-    </ul>
-  </div>
-
-  <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); font-size: .78rem; color: var(--ink-3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem;">
-    <span>Projet PhoneRep — Handoff juin 2026</span>
+  <div style="margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border); font-size:.78rem; color:var(--ink-3); display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem;">
+    <span>Projet PhoneRep · Handoff juin 2026</span>
     <span>GitHub : <a href="https://github.com/myooooooo/sitephonerep">myooooooo/sitephonerep</a></span>
   </div>
 
